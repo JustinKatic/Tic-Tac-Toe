@@ -20,7 +20,7 @@ bool WinSpots(int col0, int row0, int col1, int row1, int col2, int row2)
 //checks each of the possible win conditions and if any returned true cout which player as won and call gameover to exit loop
 bool WinConditions()
 {
-	// row win spaces	
+		// row win spaces	
 	if (WinSpots(0, 0, 0, 1, 0, 2) || WinSpots(1, 0, 1, 1, 1, 2) || WinSpots(2, 0, 2, 1, 2, 2) ||
 		//column win spaces
 		WinSpots(0, 0, 1, 0, 2, 0) || WinSpots(0, 1, 1, 1, 2, 1) || WinSpots(0, 2, 1, 2, 2, 2) ||
@@ -106,6 +106,12 @@ int main()
 		WinConditions();
 		//changes the players turn to whoevers turn it wasnt before
 		playerTurn = !playerTurn;
+		numberOfTurns++;
+		if (numberOfTurns == 9)
+		{
+			cout << "Draw";
+			gameOver = true;
+		}	
 	}
 }
 

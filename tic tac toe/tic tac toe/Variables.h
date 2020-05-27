@@ -3,7 +3,7 @@
 using namespace std;
 
 bool gameOver = false;
-
+int numberOfTurns = 0;
 //player characters
 struct Player
 {
